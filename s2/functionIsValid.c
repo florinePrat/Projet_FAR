@@ -6,7 +6,7 @@ int isValid(char *pseudo)
 {
     if (strlen(pseudo)>0 && strlen(pseudo)<10)
     {
-        if (int regexec("[:alnum:]", pseudo) == 0)
+        if (int regexec("[:alnum:]", pseudo,0, NULL, 0) == 0)
         {
             return 1;
         }
