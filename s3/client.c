@@ -522,7 +522,7 @@ int main(int argc, char *argv[]){
 			//Case : message to send
 			if(strlen(messageSent)==1){
 				printf("Server> You can't send an empty message.\n");
-			}else if(strncmp("file/",messageSent,5)){
+			}else if(!strncmp("file/",messageSent,5)){
 				printf("Forbidden action : you can't send a message starting with \"file/\".\n");
 			}else{
 				sending(messageSent,clientSocket);
