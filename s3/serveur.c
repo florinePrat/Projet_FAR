@@ -169,8 +169,8 @@ void *thread_client(void *params){
         availability[clientNum]=1;
         closing(clientSocket[clientNum]);
         break;
-      }else if(!strncmp("file",msg,4)){
-        //if file/port is received
+      }else if(!strncmp("file/",msg,5)){
+        //if "file/port" is received
         //sending the number of clients that will receive the file
         //it is needed because the client will become a server and he needs to know how many clients will connect
         sprintf(msgSent,"ServerData>%i",nbClient);

@@ -226,7 +226,7 @@ int file_exist(char *msg){
 	FILE *fps = fopen(fileTree, "r");
 	if (fps == NULL){
 		printf("Server> Can't open the following file : %s, files must be stores in the \"filesToSend\" directory\n",fileTree);
-		fclose(fps);
+		printf("Server> Please type \"file\" to cancel the action or choose a valid file\n");
 		return 0;
 	}
 	fclose(fps);
@@ -303,7 +303,7 @@ void *thread_receiving(void *socket){
 		receiving(messageReceived,sock);
 
 		//If a client is sending us a file
-		if(!strncmp(messageReceived,"file",4)){
+		if(!strncmp(messageReceived,"file/",5)){
 			//Split the received message into the corresponding variables
 			separate_ip_port(messageReceived,ip,portString);
 			thread_params[0]=ip;
