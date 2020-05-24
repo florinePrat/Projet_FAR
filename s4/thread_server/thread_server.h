@@ -35,11 +35,12 @@ struct taccept_param{
 void *thread_client(void*);
 
 //Parameters : server socket and channel number
-
+//Create a thread executing thread_client when a new client connects
 void *thread_channel(void*);
 
 //Parameters : socket of the client
-//Hold the channel space, including creation and joining.
+//Use to deal with the coice of channel or the creation of a new one
 void *thread_accept(void*);
 
+//Create a thread executing thread_channel each time thread_accept sends the signal
 void *thread_creation_channel(void*);
