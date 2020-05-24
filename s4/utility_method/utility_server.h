@@ -20,5 +20,12 @@ void initiate_array();
 //Change the current admin to the first client available
 void switch_admin(int);
 
-//Method used to factorize the "thread_accept" method
+/**
+Parameters :
+-the chosen channel by the new client
+-the pointer to the boolean variable checking if the chosen channel is valid
+-socket of the client
+-address of the client
+Method used to factorize the "thread_accept" method, allow to leave the while if the chosen channel is valid
+**/
 void connecting_to_channel(int, int *, int, struct sockaddr_in *);
