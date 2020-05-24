@@ -30,11 +30,16 @@ struct taccept_param{
   struct sockaddr_in address;
 };
 
-
+//Parameters : socket of the client
+//Hold all the client space, from the beginning to the end of the conversation.
 void *thread_client(void*);
+
+//Parameters : server socket and channel number
 
 void *thread_channel(void*);
 
+//Parameters : socket of the client
+//Hold the channel space, including creation and joining.
 void *thread_accept(void*);
 
 void *thread_creation_channel(void*);
