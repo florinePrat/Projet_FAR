@@ -47,4 +47,5 @@ Parameter :
 -char array to store the ip
 -char array to store the port
 Separate the initial message and store the part in the concerned char array
+**/
 void separate_ip_port(char *,char *, char *);
